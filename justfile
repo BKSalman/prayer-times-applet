@@ -1,5 +1,5 @@
-name := 'cosmic-applet-template'
-export APPID := 'com.example.CosmicAppletTemplate'
+name := 'prayer-times-applet'
+export APPID := 'com.github.BKSalman.PrayerTimesApplet'
 
 rootdir := ''
 prefix := '/usr'

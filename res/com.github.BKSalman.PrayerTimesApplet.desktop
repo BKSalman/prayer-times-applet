@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=COSMIC Applet Template
-Exec=cosmic-applet-template %F
+Name=Prayer times
+Exec=prayer-times-applet %F
 Terminal=false
 Type=Application
 StartupNotify=true
 Icon=com.example.CosmicAppletTemplate
 Categories=COSMIC;Utility;
-Keywords=Folder;Manager;
+Keywords=Time;Manager;
 MimeType=inode/directory;
 NoDisplay=true
 X-CosmicApplet=true

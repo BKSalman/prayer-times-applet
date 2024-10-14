@@ -3,17 +3,17 @@
   <id>com.example.CosmicAppletTemplate</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
-  <project_group>COSMIC</project_group>
-  <developer_name>YourName</developer_name>
-  <update_contact>your@email.com</update_contact>
-  <url type="homepage"></url>
-  <url type="bugtracker"></url>
-  <name>COSMIC App Template</name>
-  <summary>A template for COSMIC applications</summary>
+  <project_group></project_group>
+  <developer_name>Salman</developer_name>
+  <update_contact>salman.f.abuhaimed@gmail.com</update_contact>
+  <url type="homepage">https://github.com/BKSalman</url>
+  <url type="bugtracker">https://github.com/BKSalman/prayer-times-applet/issues</url>
+  <name>Prayer times</name>
+  <summary>An applet that shows the Islamic prayer times</summary>
   <description>
-    <p>A template for COSMIC applications</p>
+    <p>An applet that shows the Islamic prayer times for your current location</p>
   </description>
-  <launchable type="desktop-id">com.example.CosmicAppletTemplate.desktop</launchable>
+  <launchable type="desktop-id">com.github.BKSalman.PrayerTimesApplet</launchable>
   <icon type="remote" height="256" width="256">https://raw.githubusercontent.com/edfloreshz/cosmic-applet-template/master/res/icons/hicolor/256x256/apps/com.example.CosmicAppletTemplate.svg</icon>
   <screenshots>
   </screenshots>
@@ -22,7 +22,7 @@
       <mimetype>text/plain</mimetype>
     </mimetypes>
     <binaries>
-      <binary>cosmic-applet-template</binary>
+      <binary>prayer-times-applet</binary>
     </binaries>
   </provides>
 </component>
