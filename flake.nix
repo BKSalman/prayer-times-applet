@@ -31,7 +31,6 @@
           libGL
           wayland
           libxkbcommon
-          bzip2
           fontconfig
           freetype
           xorg.libX11
@@ -86,14 +85,14 @@
             inherit buildInputs nativeBuildInputs cargoArtifacts;
 
             postInstall = ''
-              for _size in "16x16" "32x32" "48x48" "64x64" "128x128" "256x256"; do
+              for _size in 16x16 32x32 48x48 64x64 128x128 256x256; do
                   echo $src
                   install -Dm644 "$src/res/icons/hicolor/$_size/apps/com.github.BKSalman.PrayerTimesApplet.svg" "$out/share/icons/hicolor/$_size/apps/com.github.BKSalman.PrayerTimesApplet.svg"
               done
               install -Dm644 "$src/res/com.github.BKSalman.PrayerTimesApplet.desktop" -t "$out/share/applications/"
               install -Dm644 "$src/res/com.github.BKSalman.PrayerTimesApplet.metainfo.xml" -t "$out/share/metainfo/"
 
-              patchelf --set-rpath ${libPath} $out/bin/prayer-times-applet
+              wrapProgram $out/bin/prayer-times-applet --suffix LD_LIBRARY_PATH : ${pkgs.lib.makeLibraryPath buildInputs}
             '';
 
             GIT_HASH = self.rev or self.dirtyRev;
