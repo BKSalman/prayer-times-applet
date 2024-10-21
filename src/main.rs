@@ -8,5 +8,6 @@ use prayer_times_applet::app::YourApp;
 /// - `()` is the flags that your app needs to use before it starts.
 ///  If your app does not need any flags, you can pass in `()`.
 fn main() -> cosmic::iced::Result {
+    env_logger::init();
     cosmic::applet::run::<YourApp>(true, ())
 }

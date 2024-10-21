@@ -7,7 +7,9 @@ rust-version = "1.80"
 
 [dependencies]
 chrono = { version = "0.4.38", features = ["serde"] }
+env_logger = "0.11.5"
 i18n-embed-fl = "0.8"
+log = "0.4.22"
 open = "5.1.3"
 rust-embed = "8.3.0"
 serde = { version = "1.0.210", features = ["derive"] }
