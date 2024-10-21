@@ -5,7 +5,7 @@ use cosmic::iced::wayland::popup::{destroy_popup, get_popup};
 use cosmic::iced::window::Id;
 use cosmic::iced::Limits;
 use cosmic::iced_style::application;
-use cosmic::widget::{self, settings};
+use cosmic::widget::{self, settings, JustifyContent};
 use cosmic::{Application, Element, Theme};
 use i18n_embed::Localizer;
 
@@ -77,32 +77,32 @@ impl Application for YourApp {
         let content_list = widget::list_column()
             .padding(5)
             .spacing(0)
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("refresh"),
                 widget::button::icon(widget::icon::from_name("view-refresh-symbolic"))
                     .on_press(Message::Refresh),
             ))
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("fajr"),
                 widget::text(&self.prayer_times.fajr),
             ))
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("sunrise"),
                 widget::text(&self.prayer_times.sunrise),
             ))
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("dhuhr"),
                 widget::text(&self.prayer_times.dhuhr),
             ))
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("asr"),
                 widget::text(&self.prayer_times.asr),
             ))
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("maghrib"),
                 widget::text(&self.prayer_times.maghrib),
             ))
-            .add(settings::item(
+            .add(settings::flex_item(
                 fl!("isha"),
                 widget::text(&self.prayer_times.isha),
             ));
