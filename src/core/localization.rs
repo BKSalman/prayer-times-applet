@@ -4,7 +4,7 @@ use std::sync::LazyLock;
 
 use i18n_embed::{
     fluent::{fluent_language_loader, FluentLanguageLoader},
-    LanguageLoader,
+    DefaultLocalizer, LanguageLoader,
 };
 use rust_embed::RustEmbed;
 
@@ -31,4 +31,8 @@ macro_rules! fl {
     ($message_id:literal, $($args:expr),*) => {{
         i18n_embed_fl::fl!($crate::core::localization::LANGUAGE_LOADER, $message_id, $($args), *)
     }};
+}
+
+pub fn localizer() -> DefaultLocalizer<'static> {
+    DefaultLocalizer::new(&*LANGUAGE_LOADER, &Localizations)
 }

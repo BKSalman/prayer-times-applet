@@ -7,6 +7,7 @@ use cosmic::iced::Limits;
 use cosmic::iced_style::application;
 use cosmic::widget::{self, settings};
 use cosmic::{Application, Element, Theme};
+use i18n_embed::Localizer;
 
 use crate::{fl, PrayerTimes};
 
@@ -49,6 +50,13 @@ impl Application for YourApp {
             popup: None,
             prayer_times: PrayerTimes::new().unwrap(),
         };
+
+        let localizer = crate::core::localization::localizer();
+        let requested_languages = i18n_embed::DesktopLanguageRequester::requested_languages();
+
+        if let Err(error) = localizer.select(&requested_languages) {
+            eprintln!("Error while loading languages for library_fluent {error}");
+        }
 
         (app, Command::none())
     }
