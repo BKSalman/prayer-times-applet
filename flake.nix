@@ -29,8 +29,9 @@
           pango
           vulkan-loader
           libGL
-          wayland
-          libxkbcommon
+
+          wayland wayland-scanner libxkbcommon wayland-protocols
+
           fontconfig
           freetype
           xorg.libX11
